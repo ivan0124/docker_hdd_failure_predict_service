@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 #MAINTAINER Advantech
 
@@ -25,13 +25,12 @@ RUN useradd -m -k /home/adv adv -p adv -s /bin/bash -G sudo
 RUN echo "adv ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 WORKDIR /home/adv
 
-# install APIGateway
-#RUN git clone https://github.com/ADVANTECH-Corp/APIGateway.git /home/adv/APIGateway
-#RUN cp APIGateway/script/advigw-restapi /usr/local/bin/.
-#RUN echo `date` > 123.txt
-RUN git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git
+# install HDD failure prediction service
+RUN git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict
+RUN sudo chmod a+w hdd_failure_predict/Feature.data
+RUN sudo cp hdd_failure_predict/run_service.sh /usr/local/bin/.
 
 USER adv
 
-# Run api-gw
-#ENTRYPOINT ["advigw-restapi"]
+# Run hdd failure prediction servcie
+#ENTRYPOINT ["run_service.sh"]
