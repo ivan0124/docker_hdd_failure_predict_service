@@ -11,4 +11,8 @@ RUN apk update \
     /var/cache/apk/R-3.2.3-r0.apk \
     /var/cache/apk/R-dev-3.2.3-r0.apk \
     /var/cache/apk/R-doc-3.2.3-r0.apk \
-  && rm -fr /var/cache/apk/*
+  && apk add --no-cache git nodejs && \
+  useradd -m -k /home/adv adv -p adv -s /bin/bash -G sudo && echo "adv ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+  git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict && \
+  chmod a+w hdd_failure_predict/Feature.data && cp hdd_failure_predict/run_service.sh /usr/local/bin/. && \
+  rm -fr /var/cache/apk/*
