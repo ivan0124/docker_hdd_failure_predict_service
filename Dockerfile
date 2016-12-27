@@ -11,10 +11,10 @@ RUN apk update \
     /var/cache/apk/R-3.2.3-r0.apk \
     /var/cache/apk/R-dev-3.2.3-r0.apk \
     /var/cache/apk/R-doc-3.2.3-r0.apk \
-  && mkdir -p /home/adv/ \
-  && apk add --no-cache git bash nodejs && \
+  && apk add --no-cache git nodejs && \
   git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict && \
   /bin/chmod a+w /home/adv/hdd_failure_predict/Feature.data && /bin/cp /home/adv/hdd_failure_predict/run_service.sh /usr/local/bin/. && \
+  /bin/chmod a+rwx -R /home/adv/hdd_failure_predict/ && \
   /bin/rm -fr /var/cache/apk/*
   
 WORKDIR /home/adv
