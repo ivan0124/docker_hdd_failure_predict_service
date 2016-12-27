@@ -15,3 +15,5 @@ RUN apk update \
   git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict && \
   /bin/chmod a+w /home/adv/hdd_failure_predict/Feature.data && /bin/cp /home/adv/hdd_failure_predict/run_service.sh /usr/local/bin/. && \
   /bin/rm -fr /var/cache/apk/*
+  
+WORKDIR /home/adv
