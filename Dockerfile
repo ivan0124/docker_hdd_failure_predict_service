@@ -17,3 +17,4 @@ RUN apk update \
   /bin/rm -fr /var/cache/apk/*
   
 WORKDIR /home/adv
+ENTRYPOINT ["run_service.sh"]
