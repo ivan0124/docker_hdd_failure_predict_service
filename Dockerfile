@@ -13,5 +13,5 @@ RUN apk update \
   /bin/chmod a+rwx -R /home/adv/hdd_failure_predict/ && \
   apk del git curl && /bin/rm -rf /tmp/* /var/cache/apk/*
   
-#WORKDIR /home/adv
+WORKDIR /home/adv
 ENTRYPOINT ["run_service.sh"]
