@@ -14,4 +14,4 @@ RUN apk update \
   apk del git curl && /bin/rm -rf /tmp/* /var/cache/apk/*
   
 WORKDIR /home/adv
-ENTRYPOINT ["run_service.sh"]
+ENTRYPOINT ["start.sh"]
