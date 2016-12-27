@@ -1,5 +1,5 @@
-FROM alpine:3.3
-MAINTAINER Sasha Gerrand <alpine-pkgs@sgerrand.com>
+FROM alpine
+#MAINTAINER Advantech
 RUN apk update \
   && apk add ca-certificates curl \
   && curl --silent \
