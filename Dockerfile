@@ -2,8 +2,7 @@ FROM alpine
 
 #MAINTAINER Advantech
 
-RUN apk update && apk add --no-cache git nodejs && \
-    apk add ca-certificates curl && \
+RUN apk update && apk add --no-cache git nodejs ca-certificates curl && \
     curl --silent \
     --location https://github.com/sgerrand/alpine-pkg-R/releases/download/v3.2.3-r0/R-3.2.3-r0.apk --output /var/cache/apk/R-3.2.3-r0.apk \
     --location https://github.com/sgerrand/alpine-pkg-R/releases/download/v3.2.3-r0/R-dev-3.2.3-r0.apk --output /var/cache/apk/R-dev-3.2.3-r0.apk \
