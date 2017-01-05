@@ -8,7 +8,7 @@ RUN apk update \
   && apk add --allow-untrusted \
     /var/cache/apk/R-3.2.3-r0.apk \
   && apk add --no-cache git bash nodejs make gcc g++ python linux-headers paxctl libgcc libstdc++ gnupg && \
-  git clone https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict && \
+  git clone --branch 20170105 https://github.com/ADVANTECH-Corp/hdd_failure_predict_service.git /home/adv/hdd_failure_predict && \
   /bin/chmod a+w /home/adv/hdd_failure_predict/Feature.data && /bin/cp /home/adv/hdd_failure_predict/start.sh /usr/local/bin/. && \
   /bin/chmod a+rwx -R /home/adv/hdd_failure_predict/ && \
   apk del curl && /bin/rm -rf /tmp/* /var/cache/apk/*
