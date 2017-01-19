@@ -9,4 +9,4 @@ RUN apk update \
   /bin/rm -rf /tmp/* /var/cache/apk/*
   
 WORKDIR /home/adv
-ENTRYPOINT ["start.sh"]
+#ENTRYPOINT ["start.sh"]
